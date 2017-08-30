@@ -2,6 +2,6 @@
 - include: bigip_virtual_server/manage_vip.yml 
   vars:
     - name: "ansible_demo_vip" 
-    - all_rules:
+    - all_rules: "maintenance_off_irules"
   when: state == "present"
 ...
