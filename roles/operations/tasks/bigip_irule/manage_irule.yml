@@ -1,5 +1,5 @@
 ---
-- name: Manage the iRule contained in the static file bodgeit-rewrite.tcl to the LTM module
+- name: Manage the iRule contained in the static file tcl to the LTM module
   bigip_irule:
     name: "ansible_demo_rewrite"
     user: "{{ username }}"
@@ -7,6 +7,18 @@
     server: "{{ inventory_hostname }}"
     module: "ltm"
     content: "{{ lookup('file', 'irules/ansible-demo-rewrite.tcl') }}"
+    validate_certs: "false"
+    state: "{{ state }}"
+  delegate_to: localhost
+  
+- name: Manage the iRule contained in the static file tcl to the LTM module
+  bigip_irule:
+    name: "ansible_demo_rewrite"
+    user: "{{ username }}"
+    password: "{{ password }}"
+    server: "{{ inventory_hostname }}"
+    module: "ltm"
+    content: "{{ lookup('file', 'irules/maintenance_off_irules.tcl') }}"
     validate_certs: "false"
     state: "{{ state }}"
   delegate_to: localhost
