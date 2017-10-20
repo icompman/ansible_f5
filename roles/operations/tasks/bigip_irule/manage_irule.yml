@@ -13,7 +13,7 @@
   
 - name: Manage the iRule contained in the static file tcl to the LTM module
   bigip_irule:
-    name: "ansible_demo_rewrite"
+    name: "maintenance_off_irules"
     user: "{{ username }}"
     password: "{{ password }}"
     server: "{{ inventory_hostname }}"
