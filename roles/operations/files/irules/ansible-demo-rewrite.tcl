@@ -1,6 +1,6 @@
 when HTTP_REQUEST {
 
-	if { [HTTP::uri] ends_with ".html" } {
+	if { ( [HTTP::uri] ends_with ".html") or ( [HTTP::uri] ends_with "/")} {
 	
 	    if { ! [HTTP::cookie exists "visited_maintenance_page"] || [HTTP::cookie value "visited_maintenance_page"] != "true" } {
         
@@ -17,7 +17,7 @@ when HTTP_REQUEST {
    							document.cookie = "visited_maintenance_page=true " + expires;
 	      			</script>
 	      			<body>
-	      			     <!--<center><img src="https://www.dropbox.com/s/1shixntablezykb/ansible_f5demo_test.png?raw=1"</img><</center>-->
+	      			     <!--<center><img src="https://www.dropbox.com/s/1shixntablezykb/ansible_f5demo_test.png?raw=1"</img></center>-->
 	      			     <center><img src="http://localhost:8080/sdmdc_f5demo.png"</img><</center>
 	      			     <br/>
 	      			     <h1><center>This site is scheduled for maintenance in the next hour. <br/>
