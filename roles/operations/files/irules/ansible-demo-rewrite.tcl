@@ -21,7 +21,7 @@ when HTTP_REQUEST {
 	      			     <!-- <center><img src="http://localhost:8080/sdmdc_f5demo.png"</img></center> -->
 	      			     <br/>
 	      			     <h1><center>This site is scheduled for maintenance in the next hour. <br/>
-	      			     	Sorry for any inconvenience caused. Please click to <a href="/pageindex_onpremise.html">continue</a></center></h1>
+	      			     	Sorry for any inconvenience caused. Please click to <a href="/">continue</a></center></h1>
 	      			</body>
 	      		</html>
 		 	}
