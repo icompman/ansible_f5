@@ -24,27 +24,33 @@ while test $# -gt 0; do
                         ;;
                 -o)
                         ansible-playbook playbooks/operations.yml --ask-vault-pass -e @password.yml -e state="present" -vvv 
+                        python ./post_slack.py "Ansible Automation :: Setting up F5, created nodes, pool and virtual server. You may access the application at http://10.1.10.88"
                         shift
                         ;;
                 --operation*)
                         ansible-playbook playbooks/operations.yml --ask-vault-pass -e @password.yml -e state="present" -vvv 
+			python ./post_slack.py "Ansible Automation :: Setting up F5, created nodes, pool and virtual server. You may access the application at http://10.1.10.88"
                         shift
                         ;;
                 -mon)
                         ansible-playbook playbooks/maintenance.yml --ask-vault-pass -e @password.yml -e state="present" -vvv 
+                        python ./post_slack.py "Ansible Automation :: Put up annoucement page. All visitors will see the notification page."
                         shift
                         ;;                        
 
                 -moff)
                         ansible-playbook playbooks/maintenance_off.yml --ask-vault-pass -e @password.yml -e state="present" -vvv 
+                        python ./post_slack.py "Ansible Automation :: Removed announcement page."
                         shift
                         ;;                        
                 -t)
                         ansible-playbook playbooks/operations.yml --ask-vault-pass -e @password.yml -e state="absent" -vvv 
+			python ./post_slack.py "Ansible Automation :: Tearing down F5 setup, removed nodes, pool and virtual server."
                         shift
                         ;;
                 --teardown*)
                         ansible-playbook playbooks/operations.yml --ask-vault-pass -e @password.yml -e state="absent" -vvv 
+			python ./post_slack.py "Ansible Automation :: Tearing down F5 setup, removed nodes, pool and virtual server."
                         shift
                         ;;
                 --today*)
