@@ -40,7 +40,7 @@ while test $# -gt 0; do
 
                 -moff)
                         ansible-playbook playbooks/maintenance_off.yml --ask-vault-pass -e @password.yml -e state="present" -vvv 
-                        python ./post_slack.py "Ansible Automation :: Removed announcement page."
+                        python ./post_slack.py "Ansible Automation :: Removed announcement page!"
                         shift
                         ;;                        
                 -t)
