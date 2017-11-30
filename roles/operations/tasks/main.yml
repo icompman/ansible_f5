@@ -35,7 +35,7 @@
 - include: bigip_virtual_server/manage_vip.yml 
   vars:
     - description: "ansible demo vip" 
-    - destination: "10.1.10.99" 
+    - destination: "10.1.10.88" 
     - name: "ansible_demo_vip" 
     - pool: "ansible_demo_pool" 
     - port: "80" 
