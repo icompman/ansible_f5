@@ -21,7 +21,7 @@ when HTTP_REQUEST {
 	      			     <br/>
 	      			     <h1><center>This site is scheduled for maintenance in the next hour. <br/>
 	      			     	<!--Sorry for any inconvenience caused. Please click to <a href="/pageindex_onpremise.html">continue</a></center></h1> -->
-	      			     	Sorry for any inconvenience caused. Please click to <a href="/pageindex_alexa.html">continue</a></center></h1>
+	      			     	Sorry for any inconvenience caused. Please click to <a href="/pageindex.html">continue</a></center></h1>
 	      			</body>
 	      		</html>
 		 	}
